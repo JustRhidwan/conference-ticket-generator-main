@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Enter Your Information</h1>
+        <form id="userInfoForm">
+            <div>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            <div>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="githubUsername">GitHub Username:</label>
+                <input type="text" id="githubUsername" name="githubUsername" required>
+            </div>
+            <div>
+                <label for="profilePicture">Profile Picture:</label>
+                <input type="file" id="profilePicture" name="profilePicture" accept="image/*" required>
+                <img id="preview" src="#" alt="Preview" style="display: none;">
+            </div>
+            <button type="submit">Generate Ticket</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
