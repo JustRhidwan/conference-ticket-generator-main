@@ -43,6 +43,9 @@ header p {
     text-align: center;
     font-size: 1rem;
 }
+.cong {
+  font-size: 1.5rem;
+}
 .ticket-con {
   position: relative;
   margin-left: 3%;

@@ -105,8 +105,8 @@ button {
 }
 .upload{
     position: absolute;
-    top: 69%;
-    left: 170px;
+    top: 75%;
+    left: 45%;
 }
 
 
@@ -186,4 +186,3 @@ img{
 a {
   text-decoration:none ;
 }
-@mediaQuery 
