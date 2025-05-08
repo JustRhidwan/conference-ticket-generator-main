@@ -1,11 +1,11 @@
 body {
-    margin: 0 ;
+    margin: 0 auto 0 auto;
     background-color: #0a0431;
     background-image: url("./assets/images/background-mobile.png");
     box-sizing: border-box;
-    background-image: linear-gradient(135deg , #0a0431,rgba(76, 14, 156, 0.9) );
+    background-image: linear-gradient(195deg , #05011d,rgba(76, 14, 156, 0.9) );
     color: #ffffff;
-    font-size: 20px;
+    font-size: 30px;
     max-width: 375px;
   font-family: "Inconsolata", serif;
 padding: 10px;
@@ -72,6 +72,7 @@ header p{
     height: 50px;
      margin: 0 ;
      padding: 20px ;
+     z-index: 0;
 }
 input{
     padding: 17px;
@@ -103,10 +104,14 @@ button {
 .icon-info{
     margin-right: 10px;
 }
+.imagefield {
+  position: relative;
+}
 .upload{
-    position: absolute;
-    top: 75%;
+    position:absolute;
+    top: 53%;
     left: 45%;
+    z-index: 1;
 }
 
 

@@ -5,7 +5,7 @@ body {
    box-sizing: border-box;
     background-image: linear-gradient(120deg , #0b0725e8,rgba(55, 8, 116, 0.9) );
     color: #ffffff;
-    font-size: 20px;
+    font-size: px;
     max-width: 375px;
   font-family: "Inconsolata", serif;
 }
@@ -44,7 +44,7 @@ header p {
     font-size: 1rem;
 }
 .cong {
-  font-size: 1.5rem;
+  font-size: 59px;
 }
 .ticket-con {
   position: relative;
