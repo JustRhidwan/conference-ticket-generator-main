@@ -51,9 +51,15 @@ const pages = () => {
             console.log("File size is within the limit.");
           }
 
-          const avatarUrl = URL.createObjectURL(file); // Create a URL for the uploaded file
-          localStorage.setItem("s_avatar", avatarUrl); // Save the avatar URL to local storage
-        }
+          // Convert the file to a Base64 string
+      const reader = new FileReader();
+      reader.onload = function (event) {
+        const base64String = event.target.result;
+        localStorage.setItem("s_avatar", base64String); // Save the Base64 string to localStorage
+        console.log("Avatar saved as Base64:", base64String);
+      };
+      reader.readAsDataURL(file); // Read the file as a Data URL
+    }
       });
     }
   }
