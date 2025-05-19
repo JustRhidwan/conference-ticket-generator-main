@@ -3,7 +3,7 @@ body {
     background-color: black;
    background-image: url("./assets/images/background-mobile.png"); 
    box-sizing: border-box;
-    background-image: linear-gradient(120deg , #0b0725e8,rgba(55, 8, 116, 0.9) );
+    background-image: linear-gradient(190deg , #0b0725e8,rgba(55, 8, 116, 0.9) );
     color: #ffffff;
     font-size: px;
     max-width: 375px;

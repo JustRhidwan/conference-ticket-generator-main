@@ -9,7 +9,7 @@ if (day) {
 const pages = () => {
   function handleFirstPage() {
     const nextPageButton = document.getElementById("nextPage");
-    const avatarInput = document.querySelector("#avatar-input");
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Define the email regex here
 
     if (nextPageButton) {
       nextPageButton.addEventListener("click", function () {
@@ -18,6 +18,10 @@ const pages = () => {
         const githubUsername = document.querySelector("#github-username").value.trim();
 
         console.log(name, email, githubUsername); // Log the values for debugging
+        if (!emailRegex.test(email)) {
+          alert("Please enter a valid email address.");
+          return;
+        }
 
         if (name && email) { // Ensure both fields are filled
           localStorage.setItem("s_username", name); // Save the name to local storage
@@ -36,51 +40,20 @@ const pages = () => {
         }
       });
     }
-
-    if (avatarInput) {
-      avatarInput.addEventListener("change", function () {
-        const file = avatarInput.files[0];
-        const maxSizeInKB = 500;
-        const maxSizeInBytes = maxSizeInKB * 1024; // Convert KB to Bytes
-
-        if (file) {
-          if (file.size > maxSizeInBytes) {
-            alert("File size exceeds 500KB. Please choose a smaller file.");
-            return;
-          } else {
-            console.log("File size is within the limit.");
-          }
-
-          // Convert the file to a Base64 string
-      const reader = new FileReader();
-      reader.onload = function (event) {
-        const base64String = event.target.result;
-        localStorage.setItem("s_avatar", base64String); // Save the Base64 string to localStorage
-        console.log("Avatar saved as Base64:", base64String);
-      };
-      reader.readAsDataURL(file); // Read the file as a Data URL
-    }
-      });
-    }
   }
 
   function handleSecondPage() {
     const ticketPage = document.querySelector(".oruko");
-    const avatarImg = document.querySelector(".info img");
+    const avatarImg = document.querySelector("#avatar-img");
 
     if (ticketPage) {
       const displayName = localStorage.getItem("s_username");
       const email = localStorage.getItem("s_email");
-      const avatarUrl = localStorage.getItem("s_avatar");
 
       document.querySelector(".oruko").innerHTML = displayName;
       document.querySelector(".cong").innerHTML = `Congrats, ${displayName}! Your ticket is ready!`;
       document.querySelector(".e_news").innerHTML = `We've emailed your ticket to ${email} and will send updates in the run-up to the event.`;
-      document.querySelector(".email").innerHTML = `${email}`;
-
-      if (avatarImg && avatarUrl) {
-        avatarImg.src = avatarUrl;
-      }
+      document.querySelector(".email").innerHTML = email;
     }
   }
 
@@ -95,6 +68,7 @@ const pages = () => {
   }
 };
 
+// Ensure the `pages` function is properly invoked on window load
 window.onload = function () {
   pages();
 };
